@@ -84,52 +84,57 @@ const AddProduct = () => {
                 }}>
                     <button data-cy="add-product-button">Add Product</button>
                     <br />
-                    <input name="title" onChange={handleChange} data-cy="add-product-title" type="text" placeholder="Enter Title" />
-                    <br />
-                    <select name="category" value={data.value} onChange={handleChange} data-cy="add-product-category">
-                        <option value="shirt" data-cy="add-product-category-shirt">Shirt</option>
-                        <option value="pant" data-cy="add-product-category-pant">Pant</option>
-                        <option value="jeans" data-cy="add-product-category-jeans">Jeans</option>
-                    </select>
-                    <div>
-                        Gender:
+                    <form onClick={handleSubmit} data-cy="add-product-submit-button" action="">
+                        <input name="title" onChange={handleChange} data-cy="add-product-title" type="text" placeholder="Enter Title" />
+                        <br />
+                        <select name="category" value={data.value} onChange={handleChange} data-cy="add-product-category">
+                            <option value="shirt" data-cy="add-product-category-shirt">Shirt</option>
+                            <option value="pant" data-cy="add-product-category-pant">Pant</option>
+                            <option value="jeans" data-cy="add-product-category-jeans">Jeans</option>
+                        </select>
                         <div>
-                            Male
-                            <input onChange={handleChange}
+                            Gender:
+                            <div>
+                                Male
+                                <input onChange={handleChange}
 
-                                name="gender"
-                                className="male"
-                                type="radio"
-                                value={"male"}
-                            />{" "}
-                            Female{" "}
+                                    name="gender"
+                                    className="male"
+                                    type="radio"
+                                    value={"male"}
+                                />{" "}
+                                Female{" "}
 
-                            <input onChange={handleChange}
+                                <input onChange={handleChange}
 
-                                name="gender"
-                                className="female"
-                                type="radio"
-                                value={"female"}
-                            />
-                            unisex {" "}
+                                    name="gender"
+                                    className="female"
+                                    type="radio"
+                                    value={"female"}
+                                />
+                                unisex {" "}
 
-                            <input onChange={handleChange}
+                                <input onChange={handleChange}
 
-                                name="gender"
-                                className="unisex"
-                                type="radio"
-                                value={"unisex"}
-                            />
+                                    name="gender"
+                                    className="unisex"
+                                    type="radio"
+                                    value={"unisex"}
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    <input onChange={handleChange} type="text" name="imageSrc" id="" placeholder="Enter image url" />
-                    <br />
+                        <input onChange={handleChange} type="text" name="imageSrc" id="" placeholder="Enter image url" />
+                        <br />
 
-                    <input name="price" onChange={handleChange} data-cy="add-product-price" type="number" placeholder="Enter price" />
+                        <input name="price" onChange={handleChange} data-cy="add-product-price" type="number" placeholder="Enter price" />
 
 
-                    <button onClick={handleSubmit} data-cy="add-product-submit-button">Submit</button>
+                        <input type="submit" value="Submit" />
+                    </form>
+
+
+
                 </div>
             </div>
         </>
